@@ -1,5 +1,5 @@
 /* ============================
-   RIdeC · NOSOTROS (2025)
+   RIdeC · NOSOTROS (2025) · Light-first
    Paleta:
    azul     rgb(40,118,161)
    amarillo rgb(251,197,25)
@@ -9,20 +9,22 @@
 ================================ */
 
 :root {
+  /* Paleta base */
   --ridec-blue:   40,118,161;
   --ridec-yellow: 251,197,25;
   --ridec-gray:   123,131,133;
   --ridec-white:  255,255,255;
   --ridec-black:  0,0,0;
 
-  --bg: rgb(var(--ridec-white));
-  --fg: rgb(var(--ridec-black));
-  --fg-muted: rgba(var(--ridec-black), .7);
-  --card: rgb(255 255 255 / .9);
-  --line: rgba(0,0,0,.08);
+  /* Tema claro (por defecto) */
+  --bg: rgb(var(--ridec-white));                 /* fondo principal */
+  --fg: rgb(var(--ridec-black));                 /* texto principal */
+  --fg-muted: rgba(var(--ridec-black), .72);     /* texto secundario */
+  --surface: rgb(255 255 255);                   /* tarjetas */
+  --line: rgba(0,0,0,.08);                       /* bordes suaves */
   --brand: rgb(var(--ridec-blue));
   --accent: rgb(var(--ridec-yellow));
-  --elev: 0 10px 30px rgba(0,0,0,.08);
+  --elev: 0 8px 22px rgba(0,0,0,.08);
 
   /* Tipografía fluida */
   --step--1: clamp(.9rem, .86rem + .2vw, 1rem);
@@ -38,18 +40,32 @@
   --container: min(1100px, 92vw);
 }
 
+/* ======= (Opcional) Modo oscuro por clase =======
+   Agrega <body class="theme-dark"> para forzar dark.
+   Mantiene la misma estructura de tokens. */
+.theme-dark {
+  --bg: rgb(12 16 22);
+  --fg: rgb(235 239 244);
+  --fg-muted: rgba(235,239,244,.75);
+  --surface: rgb(20 26 34);
+  --line: rgba(255,255,255,.08);
+  --elev: 0 12px 34px rgba(0,0,0,.35);
+}
+
+/* ======= (Opcional) Preferencia del sistema =======
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: rgb(7 10 14);
-    --fg: rgb(240 243 246);
-    --fg-muted: rgba(240,243,246,.72);
-    --card: rgb(20 28 36 / .9);
+    --bg: rgb(12 16 22);
+    --fg: rgb(235 239 244);
+    --fg-muted: rgba(235,239,244,.75);
+    --surface: rgb(20 26 34);
     --line: rgba(255,255,255,.08);
     --elev: 0 12px 34px rgba(0,0,0,.35);
   }
 }
+*/
 
-/* Utilidades base (si tu global.css ya lo define, puedes omitir) */
+/* Utilidades base (si global.css ya las define, puedes omitir) */
 .section-pad { padding-block: var(--pad-sec); }
 .container { width: var(--container); margin-inline: auto; }
 .container.narrow { width: min(900px, 92vw); }
@@ -74,12 +90,13 @@
   background: var(--bg);
   color: var(--fg);
 }
+.about p { color: var(--fg-muted); }
 
-/* Sección: ODS */
+/* Sección: ODS (patrones suaves en claro) */
 .ods {
   background:
-    radial-gradient(80% 60% at 10% 0%, rgba(var(--ridec-blue), .06), transparent 60%),
-    radial-gradient(80% 60% at 90% 0%, rgba(var(--ridec-yellow), .08), transparent 70%),
+    radial-gradient(80% 60% at 10% 0%, rgba(var(--ridec-blue), .05), transparent 60%),
+    radial-gradient(80% 60% at 90% 0%, rgba(var(--ridec-yellow), .07), transparent 70%),
     var(--bg);
   color: var(--fg);
   border-block: 1px solid var(--line);
@@ -96,7 +113,7 @@
   grid-template-columns: 56px 1fr;
   gap: .8rem;
   align-items: start;
-  background: var(--card);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1rem;
@@ -107,14 +124,14 @@
 .ods-card:hover,
 .ods-card:focus-within {
   transform: translateY(-3px);
-  border-color: rgba(var(--ridec-blue), .25);
-  box-shadow: 0 14px 34px rgba(var(--ridec-blue), .18);
+  border-color: rgba(var(--ridec-blue), .28);
+  box-shadow: 0 14px 34px rgba(40,118,161,.18);
 }
 .ods-card img {
   inline-size: 56px;
   block-size: 56px;
   object-fit: contain;
-  filter: saturate(1) contrast(1.1);
+  filter: saturate(1) contrast(1.05);
 }
 .ods-card h3 {
   margin: 0 0 .25rem 0;
@@ -135,8 +152,8 @@
 }
 .mv-block {
   background:
-    linear-gradient(180deg, rgba(var(--ridec-blue), .06), transparent 60%),
-    var(--card);
+    linear-gradient(180deg, rgba(var(--ridec-yellow), .10), transparent 60%),
+    var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   padding: 1rem 1.1rem;
@@ -154,7 +171,7 @@
   inset: auto 0 -1px 0;
   height: 3px;
   background: linear-gradient(90deg, var(--brand), var(--accent));
-  opacity: .6;
+  opacity: .7;
 }
 
 /* Sección: Why + KPIs */
@@ -168,7 +185,7 @@
   gap: .75rem;
 }
 .kpi__item {
-  background: var(--card);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: .9rem .8rem;
@@ -189,7 +206,7 @@
 /* Sección: Mesa Directiva */
 .board {
   background:
-    radial-gradient(80% 60% at 0% 100%, rgba(var(--ridec-blue), .06), transparent 60%),
+    radial-gradient(80% 60% at 0% 100%, rgba(var(--ridec-blue), .05), transparent 60%),
     var(--bg);
   color: var(--fg);
   border-top: 1px solid var(--line);
@@ -204,7 +221,7 @@
   margin: 0;
 }
 .board-card {
-  background: var(--card);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1rem;
@@ -214,8 +231,8 @@
 .board-card:hover,
 .board-card:focus-within {
   transform: translateY(-3px);
-  border-color: rgba(var(--ridec-yellow), .3);
-  box-shadow: 0 14px 34px rgba(var(--ridec-yellow), .18);
+  border-color: rgba(var(--ridec-yellow), .35);
+  box-shadow: 0 14px 34px rgba(251,197,25,.2);
 }
 .avatar {
   margin: 0 0 .7rem 0;
@@ -228,7 +245,8 @@
   border-radius: 999px;
   object-fit: cover;
   border: 3px solid var(--brand);
-  outline: 3px solid rgba(var(--ridec-blue), .15);
+  outline: 3px solid rgba(var(--ridec-blue), .18);
+  background: #f7f9fb;
 }
 .board-name {
   margin: 0;
@@ -252,12 +270,10 @@
 }
 
 /* Accesibilidad: focus visible */
-:where(a, button, .ods-card, .board-card) {
-  outline: none;
-}
+:where(a, button, .ods-card, .board-card) { outline: none; }
 :where(a, button, .ods-card, .board-card):focus-visible {
   box-shadow: 0 0 0 3px rgba(var(--ridec-yellow), .5);
-  border-color: rgba(var(--ridec-yellow), .8);
+  border-color: rgba(var(--ridec-yellow), .9);
 }
 
 /* Motion safe */
