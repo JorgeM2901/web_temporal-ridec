@@ -195,7 +195,7 @@
   transition:transform var(--app-transition-smooth);
 }
 .card:hover{transform:translateY(-6px)}
-.card__icon{width:72px;height:72px;margin-inline:auto;margin-bottom:1.25rem}
+.card__icon{width:150px;height:150px;margin-inline:auto;margin-bottom:1.25rem}
 .card__title{
   font-family:var(--app-font-heading);
   font-size:1.35rem;

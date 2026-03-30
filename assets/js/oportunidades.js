@@ -21,31 +21,36 @@ document.addEventListener('DOMContentLoaded', () => loadOportunidades());
 /* ---------- Datos simulados -------------------------------------- */
 const OPPS = [
   { year:2025, type:'becas', title:'Beca Doctoral CONCYT',
-    img:'/assets/images/opp1.jpg',
+    /* img: '/assets/images/opp1.jpg', */
+    img:'/assets/images/tem-image-2.png',
     desc:'Financia estudios de doctorado en áreas STEM.',
     start:'01-02-2025', end:'30-04-2025', country:'Perú',
     url: 'https://concyt.gob.pe/beca-doctoral-2025'
   },
   { year:2024, type:'congresos', title:'Congreso Joven Ciencia',
-    img:'/assets/images/opp2.jpg',
+    /* img: '/assets/images/opp2.jpg', */
+    img:'/assets/images/tem-image-2.png',
     desc:'Convoca trabajos de investigación para presentar en Lima.',
     start:'10-05-2024', end:'10-07-2024', country:'Perú',
     url: 'https://concyt.gob.pe/beca-doctoral-2025'
   },
   { year:2024, type:'financiamientos',title:'Fondo Innovar 2024',
-    img:'/assets/images/opp3.jpg',
+    /* img: '/assets/images/opp3.jpg', */
+    img:'/assets/images/tem-image-2.png',
     desc:'Capital semilla para proyectos de impacto social.',
     start:'15-03-2024', end:'31-05-2024', country:'Chile',
     url: 'https://concyt.gob.pe/beca-doctoral-2025' 
   },
   { year:2023, type:'traslados', title:'Pasantías en NanoTech Lab',
-    img:'/assets/images/opp4.jpg',
+    /* img: '/assets/images/opp4.jpg', */
+    img:'/assets/images/tem-image-2.png',
     desc:'Programa de movilidad de 6 meses.',
     start:'01-09-2023', end:'31-10-2023', country:'México',
     url: 'https://concyt.gob.pe/beca-doctoral-2025'
   },
   { year:2023, type:'becas', title:'Beca de Investigación OEA',
-    img:'/assets/images/opp5.jpg',
+    /* img: '/assets/images/opp5.jpg', */
+    img:'/assets/images/tem-image-2.png',
     desc:'Apoyo económico para tesis de maestría.',
     start:'05-01-2023', end:'28-02-2023', country:'Colombia',
     url: 'https://concyt.gob.pe/beca-doctoral-2025'

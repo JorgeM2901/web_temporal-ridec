@@ -59,7 +59,8 @@ const EVENTS = [
     year: 2024,
     type: 'explorando',
     title: 'Explorando Ciencias 2024',
-    img: '/assets/images/e24.jpg',
+    /* img: '/assets/images/e24.jpg',*/
+    img: '/assets/images/temp-image.png', 
     desc: 'Inteligencia Artificial y su impacto en la salud.',
     date: '15-06-2024'
   },
@@ -67,7 +68,8 @@ const EVENTS = [
     year: 2023,
     type: 'lazos',
     title: 'Generando Lazos 2023',
-    img: '/assets/images/gl23.jpg',
+    /* img: '/assets/images/gl23.jpg',*/
+    img: '/assets/images/temp-image.png', 
     desc: 'Sinergias universidad-industria.',
     date: '03-09-2023'
   },
@@ -75,7 +77,8 @@ const EVENTS = [
     year: 2022,
     type: 'explorando',
     title: 'Explorando Ciencias 2022',
-    img: '/assets/images/e22.jpg',
+    /* img: '/assets/images/e22.jpg',*/
+    img: '/assets/images/temp-image.png', 
     desc: 'Nanotecnología aplicada a la energía.',
     date: '21-07-2022'
   },
@@ -83,7 +86,8 @@ const EVENTS = [
     year: 2021,
     type: 'lazos',
     title: 'Generando Lazos 2021',
-    img: '/assets/images/gl21.jpg',
+    /* img: '/assets/images/gl21.jpg',*/
+    img: '/assets/images/temp-image.png',
     desc: 'Bio-emprendimientos sustentables.',
     date: '12-08-2021'
   },
@@ -91,7 +95,8 @@ const EVENTS = [
     year: 2020,
     type: 'explorando',
     title: 'Explorando Ciencias 2020',
-    img: '/assets/images/e20.jpg',
+    /* img: '/assets/images/e20.jpg',*/
+    img: '/assets/images/temp-image.png',
     desc: 'Iniciación a la divulgación científica.',
     date: '18-11-2020'
   }
